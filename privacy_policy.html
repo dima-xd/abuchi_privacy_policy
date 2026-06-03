@@ -3,43 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abuchi – Privacy Policy</title>
+  <title>Abuchi - Privacy Policy</title>
   <style>
     body { font-family: sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #222; line-height: 1.7; }
     h1 { font-size: 1.8em; }
     h2 { font-size: 1.2em; margin-top: 2em; }
     p, li { font-size: 0.97em; }
+    table { border-collapse: collapse; width: 100%; margin-top: 1em; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; font-size: 0.9em; }
+    th { background: #f4f4f4; }
     footer { margin-top: 3em; color: #888; font-size: 0.85em; }
   </style>
 </head>
 <body>
 
-<h1>Privacy Policy — Abuchi</h1>
-<p><em>Last updated: May 18, 2025</em></p>
+<h1>Privacy Policy - Abuchi</h1>
+<p><em>Last updated: June 3, 2026</em></p>
 
 <p>
   Abuchi ("the App") is a flashcard application for learning Chinese.
-  This Privacy Policy explains what data the App handles and how.
+  This Privacy Policy explains what data the App collects, how it is used,
+  and which third parties it is shared with.
 </p>
 
-<h2>1. Data We Do NOT Collect</h2>
-<p>The App does <strong>not</strong>:</p>
+<h2>1. Data Stored Locally on Your Device</h2>
+<p>The following data is created by you and stays on your device:</p>
 <ul>
-  <li>Collect or transmit any personal information to external servers</li>
-  <li>Create or require user accounts</li>
-  <li>Use advertising or analytics SDKs</li>
-  <li>Share any data with third parties</li>
-  <li>Track your location</li>
-</ul>
-
-<h2>2. Data Stored Locally on Your Device</h2>
-<p>All data the App creates stays on your device and is never sent anywhere:</p>
-<ul>
-  <li><strong>Flashcard content</strong> — cards and folders you create, stored in a local SQLite database</li>
-  <li><strong>Study statistics</strong> — progress, streaks, session history, stored locally</li>
-  <li><strong>App settings</strong> — preferences stored using Android SharedPreferences</li>
+  <li><strong>Flashcard content</strong> - cards and folders you create, stored in a local SQLite database</li>
+  <li><strong>Study statistics</strong> - progress, streaks, session history, stored locally</li>
+  <li><strong>App settings</strong> - preferences stored using Android SharedPreferences</li>
 </ul>
 <p>This data is removed when you uninstall the App.</p>
+
+<h2>2. Data We Collect and Share with Third Parties</h2>
+<p>
+  The App uses third-party advertising and analytics SDKs. These SDKs
+  collect data from your device and transmit it to their providers. All
+  transmission is encrypted in transit (HTTPS/TLS).
+</p>
+<table>
+  <tr>
+    <th>Data type</th>
+    <th>Purpose</th>
+    <th>Collected by / shared with</th>
+  </tr>
+  <tr>
+    <td>Device or other identifiers (advertising ID)</td>
+    <td>Advertising, analytics</td>
+    <td>Yandex Mobile Ads, Google Firebase</td>
+  </tr>
+  <tr>
+    <td>App interactions (in-app activity)</td>
+    <td>Analytics</td>
+    <td>Google Firebase Analytics</td>
+  </tr>
+  <tr>
+    <td>Crash logs</td>
+    <td>Stability and bug fixing</td>
+    <td>Google Firebase Crashlytics</td>
+  </tr>
+  <tr>
+    <td>Diagnostics / performance data</td>
+    <td>Performance monitoring</td>
+    <td>Google Firebase Performance</td>
+  </tr>
+</table>
+<p>
+  These providers process data under their own privacy policies:
+  Yandex (<a href="https://yandex.com/legal/confidential/">yandex.com/legal/confidential</a>)
+  and Google (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>).
+</p>
 
 <h2>3. Microphone Access</h2>
 <p>
@@ -49,36 +82,43 @@
   transmitted to any server.
 </p>
 
-<h2>4. Internet Permission</h2>
+<h2>4. Google Drive Backup (Optional)</h2>
 <p>
-  The App declares the INTERNET permission to support optional AI-assisted
-  study features that use a locally running language model. No data is sent
-  to remote servers. The permission may also be used by the Flutter framework
-  for local debugging purposes only.
+  You may optionally sign in with your Google account to back up your data to
+  your own Google Drive. The backup file is stored only in your personal
+  Drive. Your email address is used on-device to display which account is
+  signed in and is not transmitted to our servers. You can revoke access at
+  any time from your Google Account settings.
 </p>
 
-<h2>5. Children's Privacy</h2>
+<h2>5. Data Deletion</h2>
 <p>
-  The App does not knowingly collect any information from anyone, including
-  children under 13. Since no data is collected at all, there is nothing to
-  disclose under COPPA or similar regulations.
+  Local data is deleted when you uninstall the App. To request deletion of any
+  data associated with you, contact us at
+  <strong>dimaxdqwerty@gmail.com</strong> and we will process your request.
 </p>
 
-<h2>6. Changes to This Policy</h2>
+<h2>6. Children's Privacy</h2>
+<p>
+  The App is not directed at children under 13 and does not knowingly collect
+  personal information from them. Because the App uses third-party advertising
+  and analytics SDKs, please supervise children's use accordingly.
+</p>
+
+<h2>7. Changes to This Policy</h2>
 <p>
   If this policy is updated, the new version will be posted at this URL with
   a revised date at the top.
 </p>
 
-<h2>7. Contact</h2>
+<h2>8. Contact</h2>
 <p>
   Questions about this policy can be sent to:
-  <strong>dimaxdqwerty@gmail.com</strong>
+  <strong>io.abuchi@gmail.com</strong>
 </p>
 
 <footer>
-  &copy; 2026 Abuchi. All rights reserved.
+  Abuchi Privacy Policy
 </footer>
-
 </body>
 </html>
