@@ -9,43 +9,70 @@
     h1 { font-size: 1.8em; }
     h2 { font-size: 1.2em; margin-top: 2em; }
     p, li { font-size: 0.97em; }
+    table { border-collapse: collapse; width: 100%; margin-top: 1em; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; font-size: 0.9em; }
+    th { background: #f4f4f4; }
     footer { margin-top: 3em; color: #888; font-size: 0.85em; }
   </style>
 </head>
 <body>
 
 <h1>Privacy Policy — Abuchi Translate</h1>
-<p><em>Last updated: May 27, 2026</em></p>
+<p><em>Last updated: September 19, 2026</em></p>
 
 <p>
   Abuchi Translate ("the App") is an on-device translation application that
-  translates text, photos, and speech between 37+ languages using a local AI
-  model. This Privacy Policy explains what data the App handles and how.
+  translates text, photos, and speech between multiple languages using a local
+  AI model. This Privacy Policy explains what data the App handles, how it is
+  used, and which third parties it is shared with.
 </p>
 
-<h2>1. Data We Do NOT Collect</h2>
-<p>The App does <strong>not</strong>:</p>
-<ul>
-  <li>Collect or transmit any personal information to external servers</li>
-  <li>Create or require user accounts</li>
-  <li>Use advertising or analytics SDKs</li>
-  <li>Share any data with third parties</li>
-  <li>Track your location</li>
-  <li>Send the text, photos, or voice input you translate to any remote service</li>
-</ul>
+<h2>1. On-Device Processing</h2>
+<p>
+  The translation model and the text-recognition (OCR) models are bundled
+  inside the App and run entirely on your device. The text, photos, and voice
+  input you translate are processed in memory on your device and are
+  <strong>not</strong> saved by the App or sent to any translation server.
+</p>
 
 <h2>2. Data Stored Locally on Your Device</h2>
-<p>The only data the App stores stays on your device and is never sent anywhere:</p>
+<p>The following data stays on your device:</p>
 <ul>
-  <li><strong>App settings</strong> — selected source/target languages, theme, and app language, stored using Android SharedPreferences</li>
+  <li><strong>App settings</strong> — selected source/target languages, theme, and app language, stored using Android DataStore / SharedPreferences</li>
 </ul>
+<p>This data is removed when you uninstall the App.</p>
+
+<h2>3. Data Collected and Shared with Third Parties</h2>
 <p>
-  Translation input and output, photos, and voice input are processed in
-  memory and are not saved by the App. This data is removed when you
-  uninstall the App.
+  The App displays advertising through the Yandex Mobile Ads SDK. To serve
+  ads, this SDK collects data from your device and transmits it to its
+  provider. All transmission is encrypted in transit (HTTPS/TLS).
+</p>
+<table>
+  <tr>
+    <th>Data type</th>
+    <th>Purpose</th>
+    <th>Collected by / shared with</th>
+  </tr>
+  <tr>
+    <td>Device or other identifiers (advertising ID)</td>
+    <td>Advertising</td>
+    <td>Yandex Mobile Ads</td>
+  </tr>
+  <tr>
+    <td>Approximate, coarse device and diagnostic data</td>
+    <td>Advertising, fraud prevention, performance</td>
+    <td>Yandex Mobile Ads</td>
+  </tr>
+</table>
+<p>
+  Yandex processes this data under its own privacy policy:
+  <a href="https://yandex.com/legal/confidential/">yandex.com/legal/confidential</a>.
+  The text, photos, and voice input you translate are never shared with Yandex
+  or any other third party.
 </p>
 
-<h2>3. Camera Access</h2>
+<h2>4. Camera Access</h2>
 <p>
   The App requests camera permission solely to enable the "Translate from
   photo" feature. Images you capture or pick from the gallery are processed
@@ -53,7 +80,7 @@
   recorded, stored, or transmitted to any server.
 </p>
 
-<h2>4. Microphone Access</h2>
+<h2>5. Microphone Access</h2>
 <p>
   The App requests microphone permission solely to enable the voice
   translation feature. Speech is processed on-device by the platform's
@@ -61,28 +88,34 @@
   stored, or transmitted to any server by the App.
 </p>
 
-<h2>5. Offline Operation</h2>
+<h2>6. Internet Access</h2>
 <p>
-  The translation model is bundled inside the App and runs entirely on your
-  device. The App does not contact any server, does not download models, and
-  does not send your translation input, output, photos, or audio over the
-  network.
+  The App uses the internet connection only to load advertising through the
+  Yandex Mobile Ads SDK. Translation itself does not require an internet
+  connection and works fully offline.
 </p>
 
-<h2>6. Children's Privacy</h2>
+<h2>7. Data Deletion</h2>
 <p>
-  The App does not knowingly collect any information from anyone, including
-  children under 13. Since no personal data is collected at all, there is
-  nothing to disclose under COPPA or similar regulations.
+  Local data is deleted when you uninstall the App. To request deletion of any
+  data associated with you, contact us at
+  <strong>dimaxdqwerty@gmail.com</strong> and we will process your request.
 </p>
 
-<h2>7. Changes to This Policy</h2>
+<h2>8. Children's Privacy</h2>
+<p>
+  The App is not directed at children under 13 and does not knowingly collect
+  personal information from them. Because the App uses a third-party
+  advertising SDK, please supervise children's use accordingly.
+</p>
+
+<h2>9. Changes to This Policy</h2>
 <p>
   If this policy is updated, the new version will be posted at this URL with
   a revised date at the top.
 </p>
 
-<h2>8. Contact</h2>
+<h2>10. Contact</h2>
 <p>
   Questions about this policy can be sent to:
   <strong>dimaxdqwerty@gmail.com</strong>
