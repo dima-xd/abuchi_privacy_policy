@@ -9,37 +9,154 @@
     h1 { font-size: 1.8em; }
     h2 { font-size: 1.2em; margin-top: 2em; }
     p, li { font-size: 0.97em; }
+    a { color: #0b62c4; }
     table { border-collapse: collapse; width: 100%; margin-top: 1em; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; font-size: 0.9em; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; font-size: 0.9em; vertical-align: top; }
     th { background: #f4f4f4; }
+    nav ul { list-style: none; padding-left: 0; }
+    nav li { font-size: 0.95em; }
     footer { margin-top: 3em; color: #888; font-size: 0.85em; }
+    .note { background: #fff8e1; border-left: 4px solid #f0b400; padding: 10px 14px; margin: 1em 0; }
   </style>
 </head>
 <body>
 
 <h1>Privacy Policy - Abuchi</h1>
-<p><em>Last updated: June 3, 2026</em></p>
+<p><em>Last updated: November 12, 2026</em></p>
 
 <p>
-  Abuchi ("the App") is a flashcard application for learning Chinese.
-  This Privacy Policy explains what data the App collects, how it is used,
-  and which third parties it is shared with.
+  Abuchi ("the App") is a flashcard application for learning Chinese. It works
+  without an account, keeps your cards on your device, and only sends data off
+  the device in the limited cases described below. This Privacy Policy explains
+  what the App handles, why, and which third parties are involved.
+</p>
+<p>
+  This policy applies to the Abuchi app on Android (Google Play, RuStore) and
+  on iOS (App Store).
 </p>
 
-<h2>1. Data Stored Locally on Your Device</h2>
+<nav>
+  <ul>
+    <li><a href="#local">1. Data stored on your device</a></li>
+    <li><a href="#permissions">2. Permissions the App requests</a></li>
+    <li><a href="#shared">3. Shared decks you publish</a></li>
+    <li><a href="#drive">4. Google Drive backup (optional)</a></li>
+    <li><a href="#third-parties">5. Third parties and advertising</a></li>
+    <li><a href="#choices">6. Your choices</a></li>
+    <li><a href="#retention">7. How long data is kept</a></li>
+    <li><a href="#rights">8. Your rights</a></li>
+    <li><a href="#security">9. Security</a></li>
+    <li><a href="#children">10. Children's privacy</a></li>
+    <li><a href="#transfers">11. International transfers</a></li>
+    <li><a href="#changes">12. Changes to this policy</a></li>
+    <li><a href="#contact">13. Contact</a></li>
+  </ul>
+</nav>
+
+<h2 id="local">1. Data Stored on Your Device</h2>
 <p>The following data is created by you and stays on your device:</p>
 <ul>
-  <li><strong>Flashcard content</strong> - cards and folders you create, stored in a local SQLite database</li>
-  <li><strong>Study statistics</strong> - progress, streaks, session history, stored locally</li>
-  <li><strong>App settings</strong> - preferences stored using Android SharedPreferences</li>
+  <li><strong>Flashcard content</strong> - cards and decks you create, including
+    text, images, and audio you attach, stored in a local database inside the
+    App's sandbox</li>
+  <li><strong>Study statistics</strong> - progress, streaks, mastery scores, and
+    session history</li>
+  <li><strong>App settings</strong> - language, theme, training preferences, and
+    reminder times, stored in local app preferences
+    (<em>SharedPreferences</em> on Android, <em>UserDefaults</em> on iOS)</li>
+  <li><strong>Anonymous install ID</strong> - a random value generated once on
+    first launch. It is not derived from your device, account, or any personal
+    data, and it is only used for the shared-deck moderation described in
+    section 3</li>
 </ul>
-<p>This data is removed when you uninstall the App.</p>
-
-<h2>2. Data We Collect and Share with Third Parties</h2>
 <p>
-  The App uses third-party advertising and analytics SDKs. These SDKs
-  collect data from your device and transmit it to their providers. All
-  transmission is encrypted in transit (HTTPS/TLS).
+  This data is removed when you uninstall the App. Local backups you export
+  yourself (a file or a Google Drive backup) are controlled by you.
+</p>
+
+<h2 id="permissions">2. Permissions the App Requests</h2>
+<table>
+  <tr>
+    <th>Permission</th>
+    <th>Why it is needed</th>
+  </tr>
+  <tr>
+    <td>Microphone</td>
+    <td>Pronouncing practice. Speech recognition runs entirely on-device with
+      an offline engine (Vosk); tone analysis is also on-device. Audio is not
+      recorded, stored, or transmitted to any server.</td>
+  </tr>
+  <tr>
+    <td>Photo library</td>
+    <td>Adding an image to a flashcard. The image you pick is copied into your
+      local database. It leaves the device only if you publish the deck
+      (section 3).</td>
+  </tr>
+  <tr>
+    <td>Notifications (Android)</td>
+    <td>Local study reminders. They are scheduled on your device; the App has no
+      push-notification server.</td>
+  </tr>
+  <tr>
+    <td>Tracking (iOS)</td>
+    <td>Asked before the advertising SDK may use the advertising identifier
+      (IDFA) for personalized ads. You can decline and still use the App; see
+      section 6.</td>
+  </tr>
+</table>
+<p>
+  Speech synthesis (text-to-speech) also runs on your device, either through the
+  system voice or through models downloaded from the sherpa-onnx project. No
+  card text is sent to a text-to-speech service.
+</p>
+
+<h2 id="shared">3. Shared Decks You Publish</h2>
+<p>
+  The App includes a public catalog of decks shared by users. Publishing is
+  optional: it starts only when you choose to publish a deck, and every
+  submission is reviewed by a moderator before it appears in the catalog.
+</p>
+<p>When you publish a deck, the App uploads to our hosting provider
+  (Supabase - database and file storage):</p>
+<ul>
+  <li>the deck contents - card text, and any images or audio attached to the
+    cards</li>
+  <li>the deck title, description, language, and tags</li>
+  <li>up to five text-only sample cards used as a preview in the catalog</li>
+  <li>your anonymous install ID (see section 1), used only for rate limiting and
+    to block devices that abuse the catalog</li>
+</ul>
+<div class="note">
+  Published decks are public. Please do not publish personal information (your
+  own or anyone else's) in deck titles, descriptions, or cards.
+</div>
+<p>
+  To have a deck you published removed, email
+  <strong>io.abuchi@gmail.com</strong> - we will delete the catalog entry and the
+  stored file. Downloading a shared deck only fetches data; it does not send us
+  anything beyond a download counter and the queries described in section 5.
+</p>
+
+<h2 id="drive">4. Google Drive Backup (Optional)</h2>
+<p>
+  You may optionally sign in with your Google account to back up your data to
+  your own Google Drive. The App requests only the <em>drive.file</em> scope, so
+  it can see only the files it created itself. The backup is stored only in your
+  personal Drive; your email address is used on-device to show which account is
+  signed in and is not transmitted to our servers. You can revoke access at any
+  time in your Google Account settings.
+</p>
+<p>
+  Auto-backup is off unless you enable it, and it only uploads to your own
+  Drive.
+</p>
+
+<h2 id="third-parties">5. Third Parties and Advertising</h2>
+<p>
+  The App uses third-party advertising, analytics, and crash-reporting SDKs, and
+  a hosting provider for shared decks. These services receive data from your
+  device as described below. All transmission is encrypted in transit
+  (HTTPS/TLS).
 </p>
 <table>
   <tr>
@@ -49,72 +166,146 @@
   </tr>
   <tr>
     <td>Device or other identifiers (advertising ID)</td>
-    <td>Advertising, analytics</td>
-    <td>Yandex Mobile Ads, Google Firebase</td>
+    <td>Advertising</td>
+    <td>Yandex Mobile Ads</td>
   </tr>
   <tr>
-    <td>App interactions (in-app activity)</td>
+    <td>App interactions (in-app activity, app version, language, training and
+      streak statistics)</td>
     <td>Analytics</td>
     <td>Google Firebase Analytics</td>
   </tr>
   <tr>
-    <td>Crash logs</td>
+    <td>Approximate location (derived from IP address at the city level)</td>
+    <td>Analytics, ad delivery</td>
+    <td>Google Firebase, Yandex Mobile Ads</td>
+  </tr>
+  <tr>
+    <td>Crash logs and diagnostics (stack traces, device model, OS version,
+      app state at the time of the crash)</td>
     <td>Stability and bug fixing</td>
     <td>Google Firebase Crashlytics</td>
   </tr>
   <tr>
-    <td>Diagnostics / performance data</td>
+    <td>Performance data (startup time, network timings, screen rendering)</td>
     <td>Performance monitoring</td>
     <td>Google Firebase Performance</td>
+  </tr>
+  <tr>
+    <td>Deck content you choose to publish, plus an anonymous install ID</td>
+    <td>Shared deck catalog and moderation</td>
+    <td>Supabase (hosting provider)</td>
+  </tr>
+  <tr>
+    <td>Image search terms you enter, and requests for example audio</td>
+    <td>Finding images for cards and pronunciation examples</td>
+    <td>Wikimedia Commons, Openverse, Wiktionary</td>
+  </tr>
+  <tr>
+    <td>Model download requests</td>
+    <td>Downloading optional offline voice models</td>
+    <td>GitHub (sherpa-onnx releases)</td>
   </tr>
 </table>
 <p>
   These providers process data under their own privacy policies:
-  Yandex (<a href="https://yandex.com/legal/confidential/">yandex.com/legal/confidential</a>)
-  and Google (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>).
+  Yandex (<a href="https://yandex.com/legal/confidential/">yandex.com/legal/confidential</a>),
+  Google (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>),
+  Supabase (<a href="https://supabase.com/privacy">supabase.com/privacy</a>),
+  and the Wikimedia Foundation
+  (<a href="https://foundation.wikimedia.org/wiki/Policy:Privacy_policy">foundation.wikimedia.org</a>).
+</p>
+<p>
+  We do not sell your data and we do not use your flashcards or study content
+  for advertising.
+</p>
+<p>
+  If you have the optional Abuchi Translate app installed on Android and enable
+  the external translator, the text you send for translation is passed to that
+  app. It processes text on-device and has its own
+  <a href="abuchi_translate_privacy_policy.html">privacy policy</a>.
 </p>
 
-<h2>3. Microphone Access</h2>
+<h2 id="choices">6. Your Choices</h2>
+<ul>
+  <li><strong>Personalized ads.</strong> On iOS, the App asks for tracking
+    permission before the ad SDK may use the advertising identifier; declining
+    does not limit any App feature. On Android, you can reset or delete your
+    advertising ID, and opt out of ad personalization, in
+    <em>Settings &rarr; Google &rarr; Ads</em>.</li>
+  <li><strong>Notifications.</strong> Study reminders can be turned off in the
+    App's settings or in the system settings.</li>
+  <li><strong>Microphone and photos.</strong> Both permissions can be revoked in
+    the system settings; the related features then stop working, and nothing
+    else is affected.</li>
+  <li><strong>Analytics and crash reports.</strong> These are used to keep the
+    App stable and are not tied to your identity. If you want them disabled,
+    contact us and we will explain the options for your platform.</li>
+  <li><strong>Backups.</strong> Auto-backup is off by default and can be turned
+    off at any time; you can also sign out of Google Drive in the App.</li>
+</ul>
+
+<h2 id="retention">7. How Long Data Is Kept</h2>
+<ul>
+  <li><strong>On your device:</strong> until you delete the data or uninstall the
+    App.</li>
+  <li><strong>Published decks:</strong> until you ask us to remove them.</li>
+  <li><strong>Analytics:</strong> retained according to the provider's settings
+    (Firebase Analytics keeps event data for up to 14 months by default).</li>
+  <li><strong>Crash reports:</strong> 90 days by default in Crashlytics.</li>
+  <li><strong>Moderation records</strong> (anonymous install IDs of blocked
+    devices): kept while needed to prevent abuse.</li>
+</ul>
+
+<h2 id="rights">8. Your Rights</h2>
 <p>
-  The App requests microphone permission solely to enable the pronunciation
-  practice feature. Audio is processed entirely on-device using an offline
-  speech-recognition engine (Vosk). No audio is recorded, stored, or
-  transmitted to any server.
+  Depending on where you live (for example under the GDPR in the EU/EEA or the
+  CCPA in California), you may have the right to access, correct, delete, or
+  receive a copy of your personal data, to object to or restrict certain
+  processing, and to lodge a complaint with your local data-protection
+  authority. Since the App has no accounts, most data is already only on your
+  device; for everything else, contact us at
+  <strong>io.abuchi@gmail.com</strong> and we will respond within 30 days.
 </p>
 
-<h2>4. Google Drive Backup (Optional)</h2>
+<h2 id="security">9. Security</h2>
 <p>
-  You may optionally sign in with your Google account to back up your data to
-  your own Google Drive. The backup file is stored only in your personal
-  Drive. Your email address is used on-device to display which account is
-  signed in and is not transmitted to our servers. You can revoke access at
-  any time from your Google Account settings.
+  Data sent to third parties is encrypted in transit with HTTPS/TLS. Your local
+  database sits in the App's private sandbox and is protected by the operating
+  system, including device encryption when enabled. Published decks are stored
+  with access rules that allow reading the catalog but not editing other users'
+  entries. No method of storage or transmission is completely secure, so we
+  cannot guarantee absolute security.
 </p>
 
-<h2>5. Data Deletion</h2>
+<h2 id="children">10. Children's Privacy</h2>
 <p>
-  Local data is deleted when you uninstall the App. To request deletion of any
-  data associated with you, contact us at
-  <strong>io.abuchi@gmail.com</strong> and we will process your request.
+  The App is not directed at children under 13 (or under 16 where local law
+  requires a higher age), and we do not knowingly collect personal information
+  from them. Because the App uses third-party advertising and analytics SDKs,
+  please supervise children's use accordingly. If you believe a child has
+  provided personal data, contact us and we will delete it.
 </p>
 
-<h2>6. Children's Privacy</h2>
+<h2 id="transfers">11. International Transfers</h2>
 <p>
-  The App is not directed at children under 13 and does not knowingly collect
-  personal information from them. Because the App uses third-party advertising
-  and analytics SDKs, please supervise children's use accordingly.
+  The providers listed above may process data in countries other than yours,
+  including the United States and the European Union. Where required, transfers
+  rely on appropriate safeguards such as the European Commission's Standard
+  Contractual Clauses.
 </p>
 
-<h2>7. Changes to This Policy</h2>
+<h2 id="changes">12. Changes to This Policy</h2>
 <p>
-  If this policy is updated, the new version will be posted at this URL with
-  a revised date at the top.
+  If this policy is updated, the new version will be posted at this URL with a
+  revised date at the top. Material changes will also be noted in the App's
+  release notes.
 </p>
 
-<h2>8. Contact</h2>
+<h2 id="contact">13. Contact</h2>
 <p>
-  Questions about this policy can be sent to:
-  <strong>io.abuchi@gmail.com</strong>
+  Questions about this policy, or requests to delete published content, can be
+  sent to: <strong>io.abuchi@gmail.com</strong>
 </p>
 
 <footer>
