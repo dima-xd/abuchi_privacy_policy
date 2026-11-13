@@ -22,7 +22,7 @@
 <body>
 
 <h1>Privacy Policy - Abuchi</h1>
-<p><em>Last updated: November 12, 2026</em></p>
+<p><em>Last updated: November 13, 2026</em></p>
 
 <p>
   Abuchi ("the App") is a flashcard application for learning Chinese. It works
@@ -98,10 +98,11 @@
       push-notification server.</td>
   </tr>
   <tr>
-    <td>Tracking (iOS)</td>
-    <td>Asked before the advertising SDK may use the advertising identifier
-      (IDFA) for personalized ads. You can decline and still use the App; see
-      section 6.</td>
+    <td>Advertising identifier (iOS)</td>
+    <td>The App does not ask for App Tracking Transparency permission, so the
+      advertising identifier (IDFA) is not available to it. Ads are contextual:
+      chosen from the request itself, not from your activity in other apps or
+      on websites. See section 6.</td>
   </tr>
 </table>
 <p>
@@ -131,10 +132,13 @@
   own or anyone else's) in deck titles, descriptions, or cards.
 </div>
 <p>
-  To have a deck you published removed, email
-  <strong>io.abuchi@gmail.com</strong> - we will delete the catalog entry and the
-  stored file. Downloading a shared deck only fetches data; it does not send us
-  anything beyond a download counter and the queries described in section 5.
+  To report a deck in the catalog, use the <em>Report</em> action on its page:
+  it opens an email to <strong>io.abuchi@gmail.com</strong> with the deck title
+  and its catalog id already filled in, so we can find the entry. To have a deck
+  you published removed, email the same address - we will delete the catalog
+  entry and the stored file. Downloading a shared deck only fetches data; it does
+  not send us anything beyond a download counter and the queries described in
+  section 5.
 </p>
 
 <h2 id="drive">4. Google Drive Backup (Optional)</h2>
@@ -165,7 +169,9 @@
     <th>Collected by / shared with</th>
   </tr>
   <tr>
-    <td>Device or other identifiers (advertising ID)</td>
+    <td>Device or other identifiers (app-scoped device identifiers; the
+      advertising identifier is not used, since iOS tracking permission is not
+      requested)</td>
     <td>Advertising</td>
     <td>Yandex Mobile Ads</td>
   </tr>
@@ -228,9 +234,9 @@
 
 <h2 id="choices">6. Your Choices</h2>
 <ul>
-  <li><strong>Personalized ads.</strong> On iOS, the App asks for tracking
-    permission before the ad SDK may use the advertising identifier; declining
-    does not limit any App feature. On Android, you can reset or delete your
+  <li><strong>Ads.</strong> On iOS the App does not request App Tracking
+    Transparency permission, so the advertising identifier is not used to track
+    you and ads are contextual. On Android, you can reset or delete your
     advertising ID, and opt out of ad personalization, in
     <em>Settings &rarr; Google &rarr; Ads</em>.</li>
   <li><strong>Notifications.</strong> Study reminders can be turned off in the
